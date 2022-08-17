@@ -26,7 +26,7 @@ class Main extends HTMLElement {
             <p>Junior Web developer</p>
             <button>know more about me</button>
             <div class="icon-bar">
-              <a href="https://github.com/Senait-coding" target="_blank"><i class="fa fa-github"></i></a>
+              <a href="https://github.com/seninet" target="_blank"><i class="fa fa-github"></i></a>
               <a href="https://www.linkedin.com/in/senait-b-86944277/" target="_blank"><i class="fa fa-linkedin"></i></a>
               <a href="https://www.instagram.com/yenejojo/"><i class="fa fa-instagram" target="_blank"></i></a>
               <a href="https://www.youtube.com/channel/UCzXfvDKpOJs6QexOd_uXP9Q" target="_blank"><i class="fa fa-youtube"></i></a>
