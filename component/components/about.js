@@ -11,7 +11,7 @@ class Header extends HTMLElement {
     <div class="about-page">
         <div class="skill-container">
           <h2>About Me</h2>
-        <p class="about-me">Hello, <b>I'm Senait,</b>I'm Junior web developer ,I am a creative designer and developer,I offer both design and development services of websites.</p>
+       <p class=about-me>Hello, <b>I'm Senait,</b>I’m a passionate junior web developer with a strong foundation in HTML,CSS,JavaScript,React,Vue.js, Node.js. I enjoy building interactive, user-friendly web experiences and constantly learning new technologies to grow as a developer.</p>
           <h2 class="my-skills">Technical-Skills</h2>
           <div class="bar">
             <div class="skills html">HTML<span>85%</span></div>
