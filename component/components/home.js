@@ -64,10 +64,27 @@ class Main extends HTMLElement {
     </header>
 
     <style>
+    /* Layout adjustment */
+    .text-video-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .text-container {
+      flex: 1;
+    }
+    .text-video {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end; /* push cartoon to right */
+      align-items: center;
+    }
+
     /* Cartoon fills the container */
     .cartoon-animation {
       width: 100%;
-      height: 100%;
+      max-width: 500px; /* bigger than before */
+      height: auto;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -76,9 +93,7 @@ class Main extends HTMLElement {
     .desk {
       position: relative;
       width: 100%;
-      height: 100%;
-      max-width: 400px;
-      max-height: 300px;
+      aspect-ratio: 4 / 3;
       background: #acc6aa; /* sidebar color */
       border-radius: 8px;
     }
@@ -177,9 +192,15 @@ class Main extends HTMLElement {
 
     /* Responsive adjustments */
     @media screen and (max-width: 480px) {
-      .desk {
-        max-width: 250px;
-        max-height: 200px;
+      .text-video-container {
+        flex-direction: column;
+      }
+      .text-video {
+        justify-content: center;
+        margin-top: 15px;
+      }
+      .cartoon-animation {
+        max-width: 300px;
       }
       .screen { font-size: 0.8rem; }
       .character .body { width: 30%; height: 35%; }
@@ -221,8 +242,8 @@ class Main extends HTMLElement {
   }
 }
 
-
 customElements.define('home-component', Main);
+
 
 
 
