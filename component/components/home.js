@@ -16,7 +16,7 @@ class Main extends HTMLElement {
                 <a href="./contact.html">Contact</a>
                 <a href="./project.html">Project</a>
                 <a href="./about.html">About</a>
-                <a href="./index.html">Home</a>
+                <a href="./home.html">Home</a>
               </div>
             </nav>
             </header>
