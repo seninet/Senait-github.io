@@ -4,8 +4,7 @@ This an ongoing  project through which I attempt to build my personal homepage b
 
 ### Contributors
 
-* My classmate **Tatsiana** as UX-UI designer 
-* Me (**Senait**) as Web-Developer. 
+*  (**Senait**) . 
 
 As it is an ongoing project you are more than welcome to contribute to this project. please check the [contributors Guideline](contributor%20Guidelines.md) & [code of conduct](CODE_OF_CONDUCT.md) to know more on how you can contribute.
 
@@ -16,7 +15,7 @@ As it is an ongoing project you are more than welcome to contribute to this proj
  
 ### Followed steps   & Documents used
 
-#### By UX-UI Designer /Tatsiana
+#### By UX-UI Designer /Senait
 
 #### [Fork Repo](https://github.com/TatsianaRud/Senait-coding.github.io)
 
