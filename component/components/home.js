@@ -34,8 +34,8 @@ class Main extends HTMLElement {
               </div>
             </div>
 
+            <!-- Cartoon replaces video -->
             <div class="text-video">
-              <!-- Cartoon Animation replacing video -->
               <div class="cartoon-animation">
                 <div class="desk">
                   <div class="laptop">
@@ -57,6 +57,7 @@ class Main extends HTMLElement {
                 </div>
               </div>
             </div>
+            <!-- End cartoon -->
 
           </div>
         </div>
@@ -64,180 +65,158 @@ class Main extends HTMLElement {
     </header>
 
     <style>
-    /* Layout adjustment */
-    .text-video-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .text-container {
-      flex: 1;
-    }
-    .text-video {
-      flex: 1;
-      display: flex;
-      justify-content: flex-end; /* push cartoon to right */
-      align-items: center;
-      margin-top: 40px; /* ✅ pushes cartoon down from navbar */
-    }
-
-    /* Cartoon fills the container */
-    .cartoon-animation {
-      width: 100%;
-      max-width: 450px; /* slightly wider */
-      height: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .desk {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background: #acc6aa; /* sidebar color */
-      border-radius: 8px;
-    }
-
-    .laptop {
-      position: absolute;
-      top: 5%;
-      left: 5%;
-      width: 90%;
-      height: 40%;
-      background: #acc6aa;
-      border-radius: 4px 4px 0 0;
-      overflow: hidden;
-    }
-
-    .screen {
-      width: 100%;
-      height: 100%;
-      background: #2d2d2d;
-      color: #00ff00;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: monospace;
-      font-size: 1rem;
-      padding: 5px;
-    }
-
-    .typing {
-      border-right: 2px solid #00ff00;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: blink 0.8s step-end infinite;
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-    /* Character animation */
-    .character {
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: float 2s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(-5px); }
-    }
-
-    .character .head {
-      width: 25%;
-      height: 25%;
-      background: #f1c27d;
-      border-radius: 50%;
-      margin-bottom: 5px;
-      animation: head-bob 1.5s ease-in-out infinite;
-    }
-
-    @keyframes head-bob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-3px); }
-    }
-
-    .character .arm-left, .character .arm-right {
-      width: 25%;
-      height: 8%;
-      background: #5c715e;
-      margin: 2px;
-      transform-origin: top center;
-      animation: typing 1s ease-in-out infinite;
-    }
-
-    .character .arm-left { animation-delay: 0s; }
-    .character .arm-right { animation-delay: 0.5s; }
-
-    @keyframes typing {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-15deg); }
-    }
-
-    .character .body {
-      width: 20%;
-      height: 40%;
-      background: #5c715e;
-      margin: 0 auto;
-      border-radius: 5px;
-    }
-
-    /* Responsive adjustments */
-    @media screen and (max-width: 480px) {
+      /* Match old video container */
       .text-video-container {
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .text-container {
+        flex: 1;
       }
       .text-video {
-        justify-content: center;
-        margin-top: 15px;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end; /* cartoon on right */
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: 600px; /* same as old video max */
       }
+
+      /* Cartoon fills container like video */
       .cartoon-animation {
-        max-width: 300px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-      .screen { font-size: 0.8rem; }
-      .character .body { width: 30%; height: 35%; }
-      .character .arm-left, .character .arm-right { width: 30%; height: 8%; }
-      .character .head { width: 35%; height: 20%; }
-    }
+
+      .desk {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        background: #acc6aa;
+        border-radius: 8px;
+      }
+
+      .laptop {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 40%;
+        background: #acc6aa;
+        border-radius: 4px 4px 0 0;
+        overflow: hidden;
+      }
+
+      .screen {
+        width: 100%;
+        height: 100%;
+        background: #2d2d2d;
+        color: #00ff00;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: monospace;
+        font-size: 1rem;
+        padding: 5px;
+      }
+
+      .typing {
+        border-right: 2px solid #00ff00;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: blink 0.8s step-end infinite;
+      }
+
+      @keyframes blink { 50% { border-color: transparent; } }
+
+      .character {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: float 2s ease-in-out infinite;
+      }
+
+      @keyframes float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-5px); } }
+
+      .character .head {
+        width: 25%;
+        height: 25%;
+        background: #f1c27d;
+        border-radius: 50%;
+        margin-bottom: 5px;
+        animation: head-bob 1.5s ease-in-out infinite;
+      }
+
+      @keyframes head-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+
+      .character .arm-left, .character .arm-right {
+        width: 25%;
+        height: 8%;
+        background: #5c715e;
+        margin: 2px;
+        transform-origin: top center;
+        animation: typing 1s ease-in-out infinite;
+      }
+      .character .arm-left { animation-delay: 0s; }
+      .character .arm-right { animation-delay: 0.5s; }
+
+      @keyframes typing { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-15deg); } }
+
+      .character .body {
+        width: 20%;
+        height: 40%;
+        background: #5c715e;
+        margin: 0 auto;
+        border-radius: 5px;
+      }
+
+      /* Responsive like old video */
+      @media screen and (max-width: 480px) {
+        .text-video-container { flex-direction: column; }
+        .text-video { justify-content: center; margin-top: 15px; max-width: 300px; }
+        .screen { font-size: 0.8rem; }
+        .character .body { width: 30%; height: 35%; }
+        .character .arm-left, .character .arm-right { width: 30%; height: 8%; }
+        .character .head { width: 35%; height: 20%; }
+      }
     </style>
 
     <script>
-    const codeSnippets = [
-      'console.log("Hello there, I\\'m Senait!");',
-      'const sum = (a, b) => a + b;',
-      'function greet(name) { return \`Hi \${name}!\`; }'
-    ];
-
-    const typingText = this.querySelector('#typingText'); // ✅ fixed
-    let snippetIndex = 0;
-    let charIndex = 0;
-
-    function typeCode() {
-      const currentSnippet = codeSnippets[snippetIndex];
-      typingText.textContent = currentSnippet.slice(0, charIndex + 1);
-      charIndex++;
-      if (charIndex < currentSnippet.length) {
-        setTimeout(typeCode, 100);
-      } else {
-        setTimeout(() => {
-          charIndex = 0;
-          snippetIndex = (snippetIndex + 1) % codeSnippets.length;
-          typingText.textContent = '';
-          typeCode();
-        }, 1500);
+      const codeSnippets = [
+        'console.log("Hello there, I\\'m Senait!");',
+        'const sum = (a, b) => a + b;',
+        'function greet(name) { return \`Hi \${name}!\`; }'
+      ];
+      let typingText = document.getElementById('typingText');
+      let snippetIndex = 0;
+      let charIndex = 0;
+      function typeCode() {
+        const currentSnippet = codeSnippets[snippetIndex];
+        typingText.textContent = currentSnippet.slice(0, charIndex + 1);
+        charIndex++;
+        if(charIndex < currentSnippet.length) {
+          setTimeout(typeCode, 100);
+        } else {
+          setTimeout(() => {
+            charIndex = 0;
+            snippetIndex = (snippetIndex + 1) % codeSnippets.length;
+            typingText.textContent = '';
+            typeCode();
+          }, 1500);
+        }
       }
-    }
-
-    typeCode();
+      typeCode();
     </script>
     `;
   }
